@@ -10,10 +10,9 @@ node{
         sh "${mavenCMD} clean package"
     }
     
-    stage('SonarQube analysis') {       
-        withSonarQubeEnv() {
+    stage('SonarQube analysis') {          
        	sh "mvn sonar:sonar"    	
     }
          
 }
-}
+
