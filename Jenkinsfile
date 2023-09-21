@@ -10,7 +10,9 @@ node{
         sh "${mavenCMD} clean package"
     }
     
-    stage('SonarQube analysis') {          
+    stage('SonarQube analysis') {  
+        def mavenHome = tool name: "Maven-3.9.4", type: "maven"
+        def mavenCMD = "${mavenHome}/bin/mvn"
        	sh "mvn sonar:sonar"    	
     }
          
